@@ -1,6 +1,6 @@
 # [classifier](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html)
 
-CIFAR10 データセットを使った画像分類の練習\
+CIFAR10 データセットを使った画像分類の練習
 
 ```
 cd classifier
