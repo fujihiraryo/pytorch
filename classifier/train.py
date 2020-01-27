@@ -5,13 +5,12 @@ import torch.optim as optim
 import model
 import dataloader
 
-epochs = 3
 cnn = model.CNN()
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(cnn.parameters(), lr=0.001, momentum=0.9)
 trainloader = dataloader.trainloader
 
-for epoch in range(epochs):
+for epoch in range(settings.epochs):
     running_loss = 0.0
     for i, data in enumerate(trainloader):
         inputs, labels = data
