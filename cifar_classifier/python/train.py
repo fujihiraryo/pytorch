@@ -4,6 +4,7 @@ import torch.optim as optim
 
 import model
 import dataloader
+import settings
 
 cnn = model.CNN()
 criterion = nn.CrossEntropyLoss()
@@ -22,6 +23,6 @@ for epoch in range(settings.epochs):
 
         running_loss += loss.item()
         if i % 2000 == 1999:
-            print('[%d,%5d] loss: %.3f' % (epoch+1, i+1, running_loss/2000))
+            print("[%d,%5d] loss: %.3f" % (epoch + 1, i + 1, running_loss / 2000))
             running_loss = 0.0
-torch.save(cnn.state_dict(), './parameter/cnn.pth')
+torch.save(cnn.state_dict(), "parameter/cnn.pth")
