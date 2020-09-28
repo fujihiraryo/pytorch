@@ -1,15 +1,15 @@
 import torch
 import torchvision
 import torchvision.transforms as transforms
-
-import settings
-
+from . import settings
 
 transform = transforms.Compose(
     [transforms.ToTensor(), transforms.Normalize(settings.mean, settings.sigma)]
 )
-trainset = torchvision.datasets.CIFAR10(root="./data/", train=True, transform=transform)
-testset = torchvision.datasets.CIFAR10(root="./data/", train=False, transform=transform)
+trainset = torchvision.datasets.CIFAR10(
+    root="./data/", train=True, transform=transform)
+testset = torchvision.datasets.CIFAR10(
+    root="./data/", train=False, transform=transform)
 trainloader = torch.utils.data.DataLoader(
     trainset,
     batch_size=settings.batch_size,

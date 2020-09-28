@@ -1,13 +1,8 @@
-# pytorch
 import torch.nn as nn
 import torch.optim as optim
-
-# my modules
-import model
-import dataloader
-import settings
-
-# standard packages
+from . import model
+from . import dataloader
+from . import settings
 import matplotlib.pyplot as plt
 from datetime import datetime as dt
 import time
@@ -17,7 +12,9 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(
     cnn.parameters(),
     lr=settings.lr,
-    momentum=settings.momentum)
+    momentum=settings.momentum
+)
+
 trainloader = dataloader.trainloader
 testloader = dataloader.testloader
 
@@ -35,15 +32,14 @@ for epoch in range(settings.epochs):
         loss.backward()
         optimizer.step()
         train_loss_epoch += loss.item()
-    train_loss.append(train_loss_epoch / (i + 1))
+    train_loss.append(train_loss_epoch / len(trainloader))
     test_loss_epoch = 0
     for i, data in enumerate(testloader):
         inputs, labels = data
         outputs = cnn(inputs)
         loss = criterion(outputs, labels)
         test_loss_epoch += loss.item()
-    test_loss.append(test_loss_epoch / (i + 1))
-
+    test_loss.append(test_loss_epoch / len(testloader))
     text = "epoch:{:3d}  train:{:3.3f}  test:{:3.3f}  time:{:5.3f}".format(
         epoch + 1, train_loss[-1], test_loss[-1], time.time() - start
     )
@@ -54,4 +50,4 @@ plt.plot(range(K), train_loss, label="train")
 plt.plot(range(K), test_loss, label="test")
 plt.legend()
 now = dt.now().strftime("%Y%m%d%H%M%S")
-plt.savefig("result/{}.png".format(now))
+plt.savefig(f"result/${now}.png")

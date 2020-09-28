@@ -1,9 +1,6 @@
 import torch
-import torch.nn as nn
-import torch.optim as optim
-
-import model
-import dataloader
+from . import model
+from . import dataloader
 
 cnn = model.CNN()
 cnn.load_state_dict(torch.load("parameter/cnn.pth"))
@@ -34,4 +31,9 @@ with torch.no_grad():
             class_correct[label] += c[i].item()
             class_total[label] += 1
 for i in range(10):
-    print("Acc of %5s : %2d %%" % (classes[i], 100 * class_correct[i] / class_total[i]))
+    print(
+        "Acc of %5s : %2d %%" %
+        (classes[i],
+         100 *
+         class_correct[i] /
+         class_total[i]))

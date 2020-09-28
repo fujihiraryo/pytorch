@@ -1,23 +1,18 @@
-# standard packages
 import time
-from datetime import datetime as dt
-
-# pytorch
-import torch
 import torch.nn as nn
 import torch.optim as optim
-import torchvision.datasets as datasets
-
-# my modules
-import model
-import dataloader
-import settings
-import utils
+from . import model
+from . import dataloader
+from . import settings
+from . import utils
 
 K = settings.folds
 cnn = model.CNN()
 criterion = nn.CrossEntropyLoss()
-optimizer = optim.SGD(cnn.parameters(), lr=settings.lr, momentum=settings.momentum)
+optimizer = optim.SGD(
+    cnn.parameters(),
+    lr=settings.lr,
+    momentum=settings.momentum)
 trainset = dataloader.trainset
 
 start = time.time()
