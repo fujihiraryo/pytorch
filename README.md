@@ -3,7 +3,7 @@
 ## 環境構築(1 回目)
 
 ```text
-conda create -n pytorch-tutorial python=3.6 -y
+conda create -n pytorch-tutorial python=3.7 -y
 conda activate pytorch-tutorial
 conda install pytorch torchvision -c pytorch -y
 conda install flake8 -y
