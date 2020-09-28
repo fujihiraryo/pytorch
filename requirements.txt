@@ -1,0 +1,26 @@
+attrs @ file:///tmp/build/80754af9/attrs_1600298409949/work
+certifi==2020.6.20
+flake8==3.8.3
+importlib-metadata @ file:///opt/concourse/worker/volumes/live/84197498-cbc0-4436-7ce0-03c4490b7a28/volume/importlib-metadata_1593446431408/work
+iniconfig @ file:///tmp/build/80754af9/iniconfig_1596827328212/work
+kaggle==1.5.6
+mccabe==0.6.1
+mkl-fft==1.2.0
+mkl-random==1.1.1
+mkl-service==2.3.0
+more-itertools @ file:///tmp/build/80754af9/more-itertools_1598884071673/work
+numpy @ file:///opt/concourse/worker/volumes/live/40d975a3-7e82-44c8-53df-feccdbce8b96/volume/numpy_and_numpy_base_1596233859108/work
+olefile==0.46
+packaging==20.4
+Pillow @ file:///opt/concourse/worker/volumes/live/05b3bc99-cf9f-44f2-42cf-267ed3a55922/volume/pillow_1594307311725/work
+pluggy==0.13.1
+py @ file:///tmp/build/80754af9/py_1593446248552/work
+pycodestyle==2.6.0
+pyflakes==2.2.0
+pyparsing==2.4.7
+pytest==6.0.2
+six==1.15.0
+toml @ file:///tmp/build/80754af9/toml_1592853716807/work
+torch==1.6.0
+torchvision==0.7.0
+zipp==3.1.0
