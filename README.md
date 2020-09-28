@@ -1,4 +1,4 @@
-# [PyTorch の練習](https://pytorch.org/tutorials/)
+# PyTorch の練習リポジトリ
 
 ## 環境構築(1 回目)
 
@@ -22,3 +22,6 @@ conda activate pytorch-tutorial
 conda deactivate
 conda remove -n pytorch-tutorial --all -y
 ```
+
+## 参考
+https://pytorch.org/tutorials/
