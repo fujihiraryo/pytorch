@@ -1,5 +1,4 @@
 # pytorch
-import torch
 import torch.nn as nn
 import torch.optim as optim
 
@@ -15,7 +14,10 @@ import time
 
 cnn = model.CNN()
 criterion = nn.CrossEntropyLoss()
-optimizer = optim.SGD(cnn.parameters(), lr=settings.lr, momentum=settings.momentum)
+optimizer = optim.SGD(
+    cnn.parameters(),
+    lr=settings.lr,
+    momentum=settings.momentum)
 trainloader = dataloader.trainloader
 testloader = dataloader.testloader
 
